@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Signup Screen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Login / Signup</h1>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit" id="loginFormButton">Login</button>
+
+      <div class="switch" >
+        <!-- <button onclick="toggleForm('loginForm')">Login</button> -->
+        <p>Don't Have an account?</p>
+        <button onclick="toggleForm('signupForm')">Sign Up</button>
+      </div>
+    </form>
+
+    <form id="signupForm" style="display: none;">
+      <label for="username_signup">Username:</label>
+      <input type="text" id="username_signup" name="username_signup" required>
+      
+      <label for="password_signup">Password:</label>
+      <input type="password" id="password_signup" name="password_signup" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <button type="submit">Sign Up</button>
+
+      <div class="switch" >
+        <p>Already have an account?</p>
+        <button onclick="toggleForm('loginForm')">Login</button>
+      </div>
+    </form>
+
+   
+  </div>
+
+  <script>
+    function toggleForm(formId) {
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+
+      if (formId === 'loginForm') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+      } else if (formId === 'signupForm') {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
